@@ -47,20 +47,18 @@ def python_trivia_game():       #reusable block of code ist eine funktion, da ko
         print(f"{idx + 1}. {question}") #position plus 1 also zuerst erste frage, dann 2 frage und etc
         user_answer = input("Deine Antwort: ").strip() #strip ist um leerzeichen weg zu machen wenn man als antwort ..8 anstat 8 eingibt
         correct_answer = questions[question]
+    if score > 3:
+        print(f"Game over! Dein final score ist: {score}/{total_questions}. Gut gemacht👍")
+    elif score == 3:
+        print(f"Game over! Dein final score ist: {score}/{total_questions}. Geht so🤷")
+    else:
+        print(f"Game over! Dein final score ist: {score}/{total_questions}. Bissle schlecht👎")
         
         if user_answer == correct_answer:  # == vergleicht obt etwas gleich ist
             print("Richtig!😊\n")  #\n wird un in der nächsten linie in terminal runter moven, also es geht nach unten 
             score += 1
         else:
             print(f"Falsch!😢. Die Richtige Antwort ist: {correct_answer}. \n")
-            
-        
-        if score > 3:
-            print(f"Game over! Dein final score ist: {score}/{total_questions}. Gut gemacht👍")
-        elif score == 3:
-            print(f"Game over! Dein final score ist: {score}/{total_questions}. Geht so🤷")
-        else:
-            print(f"Game over! Dein final score ist: {score}/{total_questions}. Bissle schlecht👎")
 
 python_trivia_game()
     
